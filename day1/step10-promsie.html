@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script>
+        let promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(false){
+                    resolve("Success Message From Resolve")
+                }else{
+                    reject("Error Message From Reject")
+                }
+            }, 2000)
+        });
+        //-------------------------------------------
+        /*   
+        promise.then(function(res){
+            console.log("First Then Function", res)
+        }, function(err){
+            console.log("Second Then Function", err)
+        }); 
+        */
+        /* 
+        promise
+        .then((res)=>{
+            console.log("Then", res);
+            return res.toUpperCase();
+        })
+        .then((res)=>{
+            console.log("Then", res)
+            return res.toLowerCase();
+        })
+        .then((res)=>{
+            console.log("Then", res)
+        })
+        .catch((err)=>{
+            console.log("Catch", err)
+        })
+        .finally(()=>{
+            console.log("Promise is complete")
+        }) 
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

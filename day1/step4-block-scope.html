@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Scope</title>
+    <script>
+        var hero = {
+            title : "Batman",
+            power : 7
+        };
+        function changeTitle(){
+           /*  var tempTitle = undefined;
+            if(hero.power > 5){
+                tempTitle = hero.title;
+                hero.title = tempTitle+" is ready to fight";
+            }
+            console.log(tempTitle);//  */
+            if(hero.power > 5){
+                // let tempTitle = hero.title; // Temporal Dead Zone ( TDZ )
+                const tempTitle = hero.title; // Temporal Dead Zone ( TDZ )
+                hero.title = tempTitle+" is ready to fight";
+                console.log(tempTitle);// 
+            }
+        };
+        changeTitle();
+        console.log(hero.title);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

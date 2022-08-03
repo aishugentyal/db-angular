@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Improvements in ES6</title>
+    <script>
+       /*  
+        function adder(num1, num2){
+            var tempNum1 = num1 || 0;
+            var tempNum2 = num2 || 0;
+            return tempNum1 + tempNum2;
+        }; 
+        */
+       // default parameters
+        /* 
+        function adder(num1 = 0, num2 = 0){
+            return num1 + num2;
+        }; 
+        */
+        // console.log( adder(5,6) );        
+        // console.log( adder(5) );   
+        
+        // REST parameters
+        /* function adder(num1, num2){
+            // console.log();
+            // return arguments.length ;
+            var total = 0;
+            for(var i = 0; i < arguments.length; i++){
+                total += arguments[i]
+            };
+            return total;
+        };  */
+        // REST parameters
+        function adder(...nums){
+           var total = 0;
+           for(var i = 0; i < nums.length; i++){
+            total += nums[i]
+           };
+           return total;
+        }; 
+        /*      
+        console.log( adder(5) );// NaN
+        console.log( adder(5,6) ); // 11
+        console.log( adder(5,6,7) ); // 
+        console.log( adder(5,6,7,8) ); // 
+        console.log( adder(5,6,7,8,9) ); //  
+        */
+
+       
+       // Spread Syntax
+       var arr = [5,6,7,8,9,10];
+       // console.log( adder(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5]) ); //
+       console.log( adder(...arr) ); //
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

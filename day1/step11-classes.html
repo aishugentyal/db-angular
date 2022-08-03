@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+        /*
+        properties
+            public ( default )
+            private
+            static
+        constructor()
+        methods
+            normal
+            get
+            set
+            static
+        */
+       // 
+        /* ES5
+        class Hero{
+            constructor(){
+                this.title = "default title"
+            }
+        } 
+        */
+
+        /* ES6 */
+        class Human{
+            canTalk = "default can talk value";
+            constructor(ct){
+                this.canTalk = ct;
+            }
+        }
+        class Hero extends Human{
+            title = "default title";
+            firstname = "default first name";
+            lastname = "default last name";
+            #mission = "my secret mission";
+            static version = 1001;
+            constructor(htitle, hfname, hlname, hct){
+                super(hct);
+                this.title = htitle;
+                this.firstname = hfname;
+                this.lastname = hlname;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            get mission(){
+                return this.#mission;
+            }
+            set mission(nmission){
+                this.#mission = nmission;
+            }
+        };
+
+        var hero = new Hero("Batman", "Bruce", "Wayne","Yes i can talk");
+        console.log( hero.fullname() );
+        console.log( hero.title );// 
+        console.log( hero.mission );// 
+        hero.mission = "Save the world";
+        console.log( hero.mission );// 
+        console.log( hero.canTalk );// 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

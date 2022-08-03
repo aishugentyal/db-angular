@@ -1,0 +1,44 @@
+Ananth
+getSellingPrice : function(){                
+    var temp = this.getCostPrice();
+    var calculateProfit = function(){
+        return temp * 0.2;
+    }
+
+    return this.getCostPrice() + calculateProfit();
+}
+-------------------------------------
+Prajwal
+var cart = {
+            name : "Cart",
+            getCostPrice : function(){
+                return 100
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    return this.getCostPrice() * 0.2;   
+                }.bind(this)
+              
+                return this.getCostPrice() + calculateProfit();
+            }
+        };
+----------------------------------------
+Rajveer
+<script>
+        var glob = 0;
+        var cart = {
+            name : "Cart",
+            getCostPrice : function(){
+                glob = 100;
+                return glob
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    return glob * 0.2;
+                }
+                return glob + calculateProfit();
+            }
+        };
+        console.log(cart.getCostPrice());// 100
+        console.log(cart.getSellingPrice());
+    </script>

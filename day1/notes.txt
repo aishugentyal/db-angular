@@ -1,0 +1,27 @@
+Angular 2 TypeScript Emmet
+v2.0.3
+jakethashi
+
+Angular Language Service
+v14.1.0
+Angular
+
+Live Server
+v5.7.5
+Ritwick Dey
+
+Mithril Emmet
+v0.7.7
+FallenMax
+
+open in browser
+v2.0.0
+TechER
+
+Prettier - Code formatter
+v9.5.0
+Prettier
+
+vscode-icons
+v11.14.0
+VSCode Icons Team
