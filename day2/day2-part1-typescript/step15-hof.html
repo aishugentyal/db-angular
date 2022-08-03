@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Functions</title>
+    <script>
+        /* 
+        function composition(fun1, fun2){
+            return function(num1){
+                return fun1( fun2(num1) );
+            }
+        };
+
+        function firstfun(num){
+            return num + num;
+        };
+
+        function secondfun(num){
+            return num * num;
+        };
+        
+        let comp = composition(firstfun, secondfun);
+
+        console.log(comp(5));// 50
+        console.log(comp(10));// 200
+        */
+
+       /*  
+       function addPower(targetObj){
+            return function(num){
+                return {
+                    title : targetObj.title,
+                    power : num
+                }
+            }
+        };
+
+        let commonman = {
+            title : "Bruce Wayne"
+        };
+        */
+
+        /* 
+        let heroInMaking = addPower(commonman);
+        console.log(heroInMaking(7)); 
+        */
+
+        /* 
+        commonman = addPower(commonman)(7);
+        console.log(commonman); 
+        */
+
+        function Component(num){
+            return function(targetClass){
+                let tc = new targetClass();
+                return class{
+                    title = tc.title;
+                    power = num
+                }
+            }
+        };
+        class CommonMan{
+            title = "Batman"
+        };
+        CommonMan = Component(7)(CommonMan);
+        console.log(new CommonMan());
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
