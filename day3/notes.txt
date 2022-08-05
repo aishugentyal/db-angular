@@ -1,0 +1,33 @@
+@Component({
+    selector : "app-root",
+    template : `
+    <h1> {{title}} </h1> 
+    <h3>Power is : {{power}}</h3>
+    <button>Click Me</button>
+    `
+})
+class MyComp{
+    title = "Welcome to DB Training";
+    power = 7
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++
+
+npm i @angular/cli -g
+ng v
+ng new steps
+cd steps
+ng serve 
+---------------------------------
+
+ng g application step2-binding
+
+ng serve step2-binding
+
+ng g application step3-directives -t -s -S --routing=false --style=css 
+
+https://tooncrush.com/data.zip
+
+https://tooncrush.com/images.zip
+
+ng g c child --flat -t -s --skip-tests=true --project=step5-communication
